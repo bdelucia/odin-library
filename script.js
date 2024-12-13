@@ -13,6 +13,10 @@ function Book(name, author) {
 function addBookToLibrary(name, author) {
     const book = new Book(name, author);
     myLibrary.push(book);
+    const newCell = document.createElement('div');
+    newCell.className = 'cell';
+    newCell.textContent = book.name + " by " + book.author;
+    cellsContainer.appendChild(newCell);
 }
 
 function displayBooks(){
@@ -36,12 +40,8 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const bookAuthor = document.querySelector('input#author[name="author"]');
   const bookTitle = document.querySelector('input#title[name="title"]');
-  console.log(bookAuthor.value);
-  console.log(bookTitle.value);
 
   addBookToLibrary(bookTitle.value, bookAuthor.value);
-  console.log(myLibrary);
-  displayBooks();
   alert('Book added!');
   modal.style.display = 'none;'
 })
