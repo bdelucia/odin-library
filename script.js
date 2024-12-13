@@ -1,6 +1,6 @@
 const myLibrary = [];
 const cellsContainer = document.querySelector('.cells');
-
+const addBookBtn = document.querySelector('.addBook');
 
 function Book(name, author) {
   this.name = name;
@@ -20,3 +20,4 @@ function displayBooks(){
     cellsContainer.appendChild(newCell);
   }
 }
+
