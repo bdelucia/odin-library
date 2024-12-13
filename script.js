@@ -1,6 +1,9 @@
 const myLibrary = [];
 const cellsContainer = document.querySelector('.cells');
 const addBookBtn = document.querySelector('.addBook');
+const modal = document.getElementById('formModal');
+const closeBtn = document.getElementById('closeFormBtn');
+const form = document.getElementById('exampleForm');
 
 function Book(name, author) {
   this.name = name;
@@ -21,3 +24,16 @@ function displayBooks(){
   }
 }
 
+addBookBtn.addEventListener('click', () => {
+  modal.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+})
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Book added!');
+  modal.style.display = 'none;'
+})
