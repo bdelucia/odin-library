@@ -1,4 +1,6 @@
 const myLibrary = [];
+const cellsContainer = document.querySelector('.cells');
+
 
 function Book(name, author) {
   this.name = name;
@@ -9,6 +11,12 @@ function addBookToLibrary(name, author) {
     const book = new Book(name, author);
     myLibrary.push(book);
 }
-console.log(myLibrary);
-addBookToLibrary('Project Hail Mary', 'Andy Weir')
-console.log(myLibrary);
+
+function displayBooks(){
+  for(book in myLibrary){
+    const newCell = document.createElement('div');
+    newCell.className = 'cell';
+    newCell.textContent = book.name + " by " + book.author;
+    cellsContainer.appendChild(newCell);
+  }
+}
