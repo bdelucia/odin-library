@@ -42,10 +42,12 @@ body {
     background-color: var(--secondary-color);
 }
 
-.exampleForm {
+#exampleForm {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    align-items: center;
 }
 
 .modal {
@@ -64,7 +66,8 @@ body {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
+    width: 50%;
+    height: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -79,4 +82,23 @@ body {
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+.submit {
+    grid-area: 4 / 2 / 5 / 3;
+    justify-self: end;
+    width: 50%;
+}
+
+.cells {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+}
+
+.cell {
+    background-color: var(--secondary-color);
+    height: 33%;
+    border-radius: 5px;
+    padding: 15px;
 }
